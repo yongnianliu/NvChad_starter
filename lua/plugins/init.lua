@@ -34,6 +34,7 @@ return {
   },
   {
       'unblevable/quick-scope',
+      event = "BufRead",
   },
   {
     "simrat39/symbols-outline.nvim",

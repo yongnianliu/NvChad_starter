@@ -106,5 +106,17 @@ cmp.setup {
 vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
 -- debugloop/telescope-undo.nvim end
 
+-- unblevable/quick-scope begin
+vim.api.nvim_exec2(
+    [[
+    augroup qs_colors
+        autocmd!
+        autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+        autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+    augroup END
+]]
+, {})
+-- unblevable/quick-scope end
+
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
