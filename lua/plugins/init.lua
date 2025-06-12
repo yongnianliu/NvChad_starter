@@ -1,4 +1,20 @@
 return {
+  -- {
+  --     'goolord/alpha-nvim',
+  --     config = function ()
+  --         require'alpha'.setup(require'alpha.themes.dashboard'.config)
+  --     end
+  -- },
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  },
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
@@ -12,13 +28,16 @@ return {
       require "configs.lspconfig"
     end,
   },
+  -- {
+  --   "nvim-telescope/telescope-project.nvim",
+  --   event = "BufWinEnter",
+  --   setup = function()
+  --     -- vim.cmd [[packadd telescope.nvim]]
+  --     require "configs.telescope-project"
+  --   end,
+  -- },
   {
-    "nvim-telescope/telescope-project.nvim",
-    event = "BufWinEnter",
-    setup = function()
-      -- vim.cmd [[packadd telescope.nvim]]
-      require "configs.telescope-project"
-    end,
+    "natecraddock/workspaces.nvim"
   },
   {
     "phaazon/hop.nvim",
@@ -86,6 +105,9 @@ return {
     -- setup = function()
     --  vim.o.timeoutlen = 500
     -- end
+  },
+  {
+    "mfussenegger/nvim-dap",
   },
   {
     "theHamsta/nvim-dap-virtual-text",

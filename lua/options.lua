@@ -118,5 +118,13 @@ vim.api.nvim_exec2(
 , {})
 -- unblevable/quick-scope end
 
+-- c++ dap begin
+
+-- c++ dap end
+
+-- natecraddock/workspaces.nvim begin
+require("workspaces").setup()
+-- natecraddock/workspaces.nvim end
+
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
