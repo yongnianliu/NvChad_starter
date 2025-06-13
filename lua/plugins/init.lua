@@ -28,6 +28,14 @@ return {
       require "configs.lspconfig"
     end,
   },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", ".nvim"}
+      }
+    end
+  },
   -- {
   --   "nvim-telescope/telescope-project.nvim",
   --   event = "BufWinEnter",
@@ -109,6 +117,7 @@ return {
   {
     "mfussenegger/nvim-dap",
   },
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
   {
     "theHamsta/nvim-dap-virtual-text",
     config = function()
@@ -191,6 +200,7 @@ return {
       require("telescope").load_extension("undo")
     end,
   },
+  { "folke/neodev.nvim", opts = {} },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },

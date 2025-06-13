@@ -126,5 +126,42 @@ vim.api.nvim_exec2(
 require("workspaces").setup()
 -- natecraddock/workspaces.nvim end
 
+-- ahmedkhalf/project.nvim begin
+require('telescope').load_extension('projects')
+-- ahmedkhalf/project.nvim end
+
+
+-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+require("neodev").setup({
+  -- add any options here, or leave empty to use the default settings
+})
+
+-- folke/neodev.nvim begin
+-- then setup your lsp server as usual
+local lspconfig = require('lspconfig')
+
+-- example to setup lua_ls and enable call snippets
+lspconfig.lua_ls.setup({
+  settings = {
+    Lua = {
+      completion = {
+        callSnippet = "Replace"
+      }
+    }
+  }
+})
+-- folke/neodev.nvim end
+
+require('lazy').setup({
+    {
+    	'glepnir/dbsession.nvim',
+    	cmd = { 'SessionSave', 'SessionDelete', 'SessionLoad'},
+      	opts = {}
+    }
+})
+
+
+require "configs.dap"
+
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
