@@ -201,6 +201,13 @@ return {
     end,
   },
   { "folke/neodev.nvim", opts = {} },
+  {
+    "Mythos-404/xmake.nvim",
+    version = "^3",
+    lazy = true,
+    event = "BufReadPost",
+    config = true,
+  },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
