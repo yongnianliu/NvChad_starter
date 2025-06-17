@@ -33,3 +33,17 @@ map('n', '<leader>dh', "<cmd>lua require('dap.ui.widgets').hover()<cr>", { desc 
 map('n', '<leader>df', "<cmd>lua local widgets = require('dap.ui.widgets'); widgets.centered_float(widgets.frames)<cr>", { desc = "dap frames" })
 -- map('n', '<leader>dt', "<cmd>PBToggleBreakpoint<cr>", { desc = "dap toggle breakpoint" })
 --map('n', '<leader>dC', "<cmd>PBClearAllBreakpoints<cr>", { desc = "dap toggle breakpoint" })
+
+map('n', '<leader>dl', function() 
+  require"osv".launch({port = 8086}) 
+end, { noremap = true })
+
+-- map('n', '<leader>dw', function()
+--   local widgets = require"dap.ui.widgets"
+--   widgets.hover()
+-- end)
+
+-- map('n', '<leader>df', function()
+--   local widgets = require"dap.ui.widgets"
+--   widgets.centered_float(widgets.frames)
+-- end)
